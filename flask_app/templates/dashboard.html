@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            <li><a href="/registration">Register</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/pets">Add Pet</a></li> |
+            <li><a href="/payments">Add Payment Method</a></li> |
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <h1>Welcome {{ user.first_name }}</h1>
+
+    <div class="pet_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Pet Name</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            {% for pet in pets %}
+            <tbody>
+                <tr>
+                    <td>{{ pet.name }}</td>
+                    <td>{{ pet.age }}</td>
+                    <td>
+                        {% if session['user_id'] == pet.user_id %}
+                        <a href="/pets/{{ pet.id }}/update">Edit</a> | <a
+                            href="/pets/{{ pet.id }}/delete">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="payment_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Payment Method</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for payment in payments %}
+                <tr>
+                    <td>{{ payment.payment_name }}</td>
+                    <td>
+                        {% if session['user_id'] == payment.user_id %}
+                        <a href="/payments/{{ payment.id }}/view">View</a> |
+                        <a href="/payments/{{ payment.id }}/update">Update</a> | <a
+                            href="/payments/{{ payment.id }}/delete">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

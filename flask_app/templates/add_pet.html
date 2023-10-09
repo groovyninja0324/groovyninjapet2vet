@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_pet.css') }}">
+    <title>Add Pet</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            <li><a href="/dashboard">Dashboard</a></li> |
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            <li><a href="/registration">Register</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <div class="form-container">
+        <h1 class="pet-form">Add Pet:</h1>
+        <form id="pet-form" action="/pets/add" method="POST">
+            <input type="hidden" name="user_id" value="{{session['user_id']}}">
+            <label for="name">Pet Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="age">Pet Age:</label><br>
+            <input type="text" id="age" name="age" required><br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div><br><br>
+</body>
+
+</html>

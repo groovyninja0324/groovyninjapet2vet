@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='update_payment.css') }}">
+    <title>Update Payment</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p style="color: red;">{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h1>Update {{ payment.payment_name }}</h1>
+
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/dashboard">Dashboard</a></li> |
+            {% endif %}
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="form-container">
+        <h1 class="update-payment">Update</h1>
+        <form action="/payments/{{ payment.id }}/update" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="user_id" value="{{session['user_id']}}">
+            <label for="card_number">Card Number:</label>
+            <input type="text" id="card_number" name="card_number" required><br>
+            <label for="month">Month (Format: XX):</label>
+            <input type="text" id="month" name="month" required><br>
+            <label for="year">Year (Format: XXXX):</label><br>
+            <input type="text" id="year" name="year" required><br><br>
+            <label for="cvv">CVV:</label><br>
+            <input type="text" id="cvv" name="cvv" required><br><br>
+            <label for="payment_name">Payment Name (Visa, Mastercard, American Express):</label><br>
+            <input type="text" id="payment_name" name="payment_name" required><br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div><br><br>
+</body>
+</html>

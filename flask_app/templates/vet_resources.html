@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='resources.css') }}">
+    <title>Resources</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/dashboard">Dashboard</a></li> |
+            {% endif %}
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            <li><a href="/registration">Register</a></li> |
+            <li><a href="/user_login">Login</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="special_note">
+        <p>~Please note that every foundation has their own eligibility requirements for financial assistance~</p>
+    </div>
+    <div class="title">
+        <p>&nbsp;</p>
+        <h2>Finance Options for Veterinary Bills:</h2>
+    </div>
+
+    <div class="resources-list">
+        <ul>
+            <li><a href="https://www.carecredit.com/">CareCredit</a> is a medical credit card (It does a hard pull on your credit) that allows you to pay for veterinary services as well as other human-based medical bills.</li>
+            <li><a href="https://scratchpay.com/">Scratchpay</a> does a "soft pull" on your credit and is not a credit card. It is a loan for your veterinary bill that you then pay back over a set time.</li>
+            <li><a href="https://www.icarefinancialcorp.com/veterinary-financing-program" target="_blank" rel="noopener">iCare Financial</a> No credit check needed. BUT your veterinary hospital has to already be signed up for this financial option.</li><br>
+        </ul>
+            <p>&nbsp;</p>
+            <h2>Crowdfunding:</h2>
+        <ul>    
+            <li><a href="https://www.waggle.org/">Waggle</a> is an animal-specific crowdfunding site that allows anyone to pay the veterinarian directly for your pet's treatment.</li>
+            <li><a href="https://www.gofundme.com/discover/animal-fundraiser">GoFundMe</a> is an online fundraising option to raise the money for your veterinary bills.</li>
+        </ul>
+            <p>&nbsp;</p>
+            <h2>Pet Insurance Options:</h2>
+        <ul>
+            <li><a href="https://www.aspcapetinsurance.com/pet-insurance-plan/" target="_blank" rel="noopener">ASPCA</a></li>
+            <li><a href="https://www.dutch.com/pages/insurance" target="_blank" rel="noopener">Dutch</a></li>
+            <li><a href="https://www.embracepetinsurance.com/" target="_blank" rel="noopener">Embrace</a></li>
+            <li><a href="https://www.fetchpet.com/pet-insurance" target="_blank" rel="noopener">Fetch by the Dodo</a></li>
+            <li><a href="https://www.libertymutual.com/pet-insurance" target="_blank" rel="noopener">Liberty Mutual</a></li>
+            <li><a href="https://www.metlifepetinsurance.com/" target="_blank" rel="noopener">MetLife</a></li>
+            <li><a href="http://petinsurance.com" target="_blank" rel="noopener">Nationwide</a></li>
+            <li><a href="https://www.petsbest.com/" target="_blank" rel="noopener">Pets Best</a> (Progressive)</li>
+            <li><a href="https://www.pumpkin.care/" target="_blank" rel="noopener">Pumpkin</a></li>
+            <li><a href="https://spotpetins.com/" target="_blank" rel="noopener">Spot Pet Insurance</a></li>
+            <li><a href="https://trupanion.com/" target="_blank" rel="noopener">Trupanion</a></li>
+        </ul>
+            <p>&nbsp;</p>
+            <h2>Funds/Grants for Veterinary Assistance:</h2>
+        <ul>
+            <li><a href="http://www.akitaclubrescue.org/" target="_blank" rel="noopener noreferrer">Akita Club of America Rescue Fund</a> (Akita breed only)</li>
+            <li><a href="https://apbf.dog/resources/helping-hands/">American Pit Bull Foundation- Helping Hands</a></li>
+            <li><a href="https://acdrescueinc.org/financial-assistance-guidelines/" target="_blank" rel="noopener noreferrer">Australian Cattle Dog Rescue, Inc.</a> (Australian Cattle Dog breed only)</li>
+            <li><a href="https://www.bowwowbuddies.com/apply-for-grant/" target="_blank" rel="noopener noreferrer">Bow Wow Buddies Foundation</a> Available for individual owners as well as rescue groups &amp; shelters for urgent veterinary needs.</li>
+            <li><a href="https://www.browndogfoundation.org/" target="_blank" rel="noopener noreferrer">Brown Dog Foundation</a> National assistance with life-sustaining prescription medications.</li>
+            <li><a href="http://www.corgiaid.org/" target="_blank" rel="noopener noreferrer">CorgiAid, Inc.</a> (Rescued Corgis only. See Eligibility Requirements)</li>
+            <li><a href="http://www.dylanshearts.com/" target="_blank" rel="noopener noreferrer">Dylan's Hearts</a> only accepts applications submitted by your veterinary office.</li>
+            <li><a href="http://www.frankiesfriends.org/national-frankies-friends-fund" target="_blank" rel="noopener noreferrer">Frankie's Friends</a> (Emergency and specialty care)</li>
+            <li><a href="http://friendsandvetshelpingpets.org/" target="_blank" rel="noopener noreferrer">Friends and Vets Helping Pets</a></li>
+            <li><a href="https://www.harleys-hopefoundation.org/" target="_blank" rel="noopener noreferrer">Harley's Hope Foundation</a></li>
+            <li><a href="https://www.help-a-pet.org/">Help A Pet</a></li>
+            <li><a href="http://www.isfoundation.com/ISFEmergencyMedicalGrant" target="_blank" rel="noopener noreferrer">Ian Somerhalder Foundation (ISF) Emergency Medical Care Grant for Animals</a> for recently rescued animals needing urgent, non-routine veterinary care due to abuse or neglect.</li>
+            <li><a href="http://www.labradorlifeline.org/" target="_blank" rel="noopener noreferrer">Labrador Lifeline</a></li>
+            <li><a href="http://www.paws4acure.org/askforhelp.php" target="_blank" rel="noopener noreferrer">Paws 4 A Cure</a></li>
+            <li><a href="http://pawscare.wordpress.com/" target="_blank" rel="noopener noreferrer">Paws Care</a> provides services to care for the pets of those affected by HIV/AIDS, Cancer, or another terminal illness.</li>
+            <li><a href="https://www.petassistanceinc.org/financialaid">Pet Assistance Inc.</a></li>
+            <li><a href="http://www.petco.com/petco_Page_PC_foundationfoodbank_Nav_1483.aspx" target="_blank" rel="noopener noreferrer">Petco Foundation Food Bank Program</a></li>
+            <li><a href="http://www.petsofthehomeless.org/" target="_blank" rel="noopener noreferrer">Pets of the Homeless</a></li>
+            <li><a href="https://www.phinneys.org/get-help.html">Phinney's</a> (Massachusetts-based)</li>
+            <li><a href="https://poodleangels.com/about-our-poodle-angels-veterinary-program">Poodle Angels</a></li>
+            <li><a href="http://www.redrover.org/grants">Red Rover</a> (Emergency and urgent care)</li>
+            <li><a href="https://www.shakespeareanimalfund.org/">Shakespeare Animal Fund</a> (North Nevada only- Low income, elderly, disables, and veterans)</li>
+            <li><a href="http://www.shcatrust.org/rescue.html" name="SHCA Trust">Siberian Husky Club of America's Trust</a> (Siberian Husky Breed only)</li>
+            <li><a href="http://www.doberman911.org/" target="_blank" rel="noopener noreferrer">Special Needs Dobermans</a></li>
+            <li><a href="http://starelief.org/aid-a-pet-grant-application/" target="_blank" rel="noopener noreferrer">Star Relief Home For Life</a></li>
+            <li><a href="http://www.themosbyfoundation.org/apply-for-assistance/pre-qualification-app/" target="_blank" rel="noopener noreferrer">The Mosby Foundation</a> (No emergencies. Dogs only.)</li>
+            <li><a href="http://bigheartsfund.harmonyapp.com/">The Big Hearts Fund</a></li>
+            <li><a href="https://www.onyxandbreezy.org/" target="_blank" rel="noopener">The Onyx &amp; Breezy Foundation</a></li>
+            <li><a href="https://www.thepetfund.com/" target="_blank" rel="noopener">The Pet Fund</a> Provides financial assistance for non-emergency veterinary care, up to $500 per applicant, for non-routine, necessary treatments.</li>
+            <li><a href="https://oscarnewman.com/pages/violet-s-friends-in-need-fund" target="_blank" rel="noopener">Violets Friends</a> offers financial assistance for urgent or critical veterinary care, surgeries, therapies or mobility solutions that are too costly for pet parents.</li>
+            <li><a href="http://www.westiemed.com/" target="_blank" rel="noopener noreferrer">WestieMed, Inc.</a> (For rescued West Highland White Terriers only)<br /><br /></li>
+        </ul>
+            <h2>Cancer Specific Resources:</h2>
+        <ul>
+            <li><a href="http://caninecancerawareness.org/">Canine Cancer Awareness</a></li>
+            <li><a href="http://www.fetchacure.org/companions-in-crisis/" target="_blank" rel="noopener noreferrer">FETCH a Cure</a> (VA, MD, D.C.)</li>
+            <li><a href="http://www.frankiesfriends.com/" target="_blank" rel="noopener noreferrer">Frankies Friends</a></li>
+            <li><a href="http://landofpuregold.com/grants/" target="_blank" rel="noopener noreferrer">Land of PureGold Foundation</a> (Fulltime Working Dogs Only)</li>
+            <li><a href="https://www.livelikeroo.org/" target="_blank" rel="noopener">Live Like Roo Foundation</a></li>
+            <li><a href="http://www.themagicbulletfund.org/" target="_blank" rel="noopener noreferrer">Magic Bullet Fund</a></li>
+            <li><a href="http://www.paws4acure.org/askforhelp.php" target="_blank" rel="noopener noreferrer">Paws 4 A Cure</a></li>
+            <li><a href="http://www.dccfund.org/" target="_blank" rel="noopener noreferrer">The Dog &amp; Cat Cancer Fund</a></li>
+            <li><a href="https://www.riedelcody.org/" target="_blank" rel="noopener noreferrer">The Riedel and Cody Fund</a></li>
+            <li><a href="http://www.joshualouis.org/" target="_blank" rel="noopener noreferrer">The Joshua Louis Animal Foundation</a></li>
+            <li><a href="https://www.thepetfund.com/" target="_blank" rel="noopener">The Pet Fund</a></li>
+            <li><a href="http://www.piefund.org/" target="_blank" rel="noopener noreferrer">The Pie Fund</a> (NY, CT, NJ)<a href="http://www.dccfund.org/" target="_blank" rel="noopener noreferrer"><br /></a></li>
+            <li><a href="https://zeusoncologyfund.org">Zeus Oncology Fund</a></li>
+        </ul>
+            <h2>Seniors:</h2>
+        <ul>
+            <li><a href="https://frostedfacesfoundation.org/" target="_blank" rel="noopener">Frosted Face</a></li>
+            <li><a href="http://www.greymuzzle.org/" target="_blank" rel="noopener noreferrer">Grey Muzzle Organization</a> helps senior dogs in shelters and rescues</li>
+            <li><a href="http://www.topdogfoundation.org/" target="_blank" rel="noopener noreferrer">Top Dog Foundation “Bentley Grant”</a></li>
+            <li><a href="http://www.touchofgreyrescue.com">Touch of Grey Rescue</a></li>
+        </ul>
+            <h2>Diabetics:</h2>
+        <ul>
+            <li><a href="http://www.felinediabetes.com/" target="_blank" rel="noopener noreferrer">Diabetic Cats in Need</a></li>
+            <li><a href="https://www.phinneys.org/blog/diabetic-dogs-need-continuous-treatments">Phinney's</a> (Massachusetts-based)</li>
+        </ul>
+            <h2>Mobility/Handicapped:</h2>
+        <ul>
+            <li><a href="http://hpets.org/" target="_blank" rel="noopener noreferrer">Handicapped Pets Foundation</a> Donates mobility equipment.</li>
+            <li><a href="https://k9carts.com/donations/" target="_blank" rel="noopener">K9 Carts</a> (Rescues Only)</li>
+            <li><a href="https://banditsk9care.org/kcs-kruisers" target="_blank" rel="noreferrer noopener">KCs Kruisers</a></li>
+            <li><a href="http://www.rescuedrollers.com/" target="_blank" rel="noopener noreferrer">Rescued Rollers</a></li>
+            <li><a href="http://www.doberman911.org/" target="_blank" rel="noopener noreferrer">Special Needs Dobermans</a></li>
+            <li><a href="https://thepetfund.com/">The Pet Fund</a></li>
+            <li><a href="https://petnzoo.wufoo.com/forms/z1tfln8u17dk7nk/" target="_blank" rel="noopener">Wheels to Help Me</a></li>
+        </ul>
+            <p>&nbsp;</p>
+            <h2>More Assistance:</h2>
+        <ul>
+            <li><a href="https://redrover.org/2021/06/21/financial-assistance-programs-by-stateprovince/">Financial Assistance by State</a></li><li><a href="https://redrover.org/2021/06/21/resources-for-horses/">Financial Resources for Horses</a></li>
+        </ul>
+    </div>
+</body>
+</html>

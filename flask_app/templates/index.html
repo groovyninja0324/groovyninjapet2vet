@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+</head>
+<body>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='pictures/logo_sec.png') }}" alt="logo">
+    </div>
+    <div class="title">
+        <h2>Pet 2 Vet</h2>
+    </div>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            <li><a href="/registration">Register</a></li> |
+            <li><a href="/user_login">Login</a></li> |
+        </ul>
+    </div>
+    <div class="information">
+        <p>Welcome to Groovy Ninja Pet 2 Vet!!  We invite you to check out our website and all the wonderful services we provide.  We provide emergency and non-emergency transportation services to animals that need medical treatment.  To find out more about or services check out <a href="/transport">Transportation Services</a> and to see who we are and why we created our business check out <a href="/meet_ninjas">The Ninjas.</a></p>
+    </div>
+    <div class="carousel-container">
+        {% for image in images %}
+        <div class="carousel-slide">
+            <img src="{{ url_for('static', filename=image) }}" alt="{{ image }}">
+        </div>
+        {% endfor %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <div class="nav-footer1">
+        <ul>
+            <li><a href="#">Subscribe</a></li> |
+            <li><a href="/privacy">Privacy Policy</a></li> |
+            <li><a href="/terms">Terms and Conditions</a></li> |
+            <li><a href="/contact_us">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="nav-footer2">
+        <ul>
+            <li><a href="https://www.facebook.com/groovyninjallc"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="https://www.instagram.com/groovyninjallc/"><ion-icon name="logo-instagram"></ion-icon></a><li>
+        </ul>
+    </div>
+</body>
+</html>

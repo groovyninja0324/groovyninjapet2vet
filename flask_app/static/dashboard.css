@@ -1,0 +1,68 @@
+body{
+    background-color: #009798;
+    margin: auto;
+    padding: 0;
+}
+
+.nav-bar {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style the list items (menu items) */
+.nav-bar li {
+    display: inline; /* Display list items horizontally */
+    margin-right: 10px; /* Add some space between items */
+}
+
+/* Position the navigation bar at the top right corner */
+.nav-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px; /* Add padding for spacing */
+    background-color: #009798; /* Background color for the navigation bar */
+}
+
+/* Style the links (menu items) */
+.nav-bar li a {
+    text-decoration: none;
+    color: #fff; /* Text color for menu items */
+}
+
+/* Style the links on hover (optional) */
+.nav-bar li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+h1{
+    color: #5B52A2;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+table {
+    width: 75%;
+    border-collapse: collapse;
+    border: 2px solid #009798;
+    }
+    
+    th {
+        background-color: #009798;
+        color: #fff;
+        font-weight: bold;
+        text-align: left;
+        padding: 8px;
+    }
+    td {
+        border: 1px solid #ccc;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    tr:hover {
+        background-color: #ddd;
+    }

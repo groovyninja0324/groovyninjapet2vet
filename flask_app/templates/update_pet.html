@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='update.css') }}">
+    <title>Update Pet</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p style="color: red;">{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+    <h1>Update {{ pet.name }}</h1>
+
+
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/dashboard">Dashboard</a></li> |
+            {% endif %}
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="form-container">
+        <h1 class="update-pet">Update</h1>
+        <form action="/pets/{{pet.id}}/update" method='POST'>
+            <input type="hidden" name="user_id" value="{{session['user_id']}}">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{pet.name}}" required>
+            <label for="age">Pet Age:</label>
+            <input type="text" name="age" value="{{pet.age}}" required>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</body>
+</html>

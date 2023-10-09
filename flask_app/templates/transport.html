@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='transport.css') }}">
+    <title>Transport</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/dashboard">Dashboard</a></li> |
+            {% endif %}
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            <li><a href="/registration">Register</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <h1>Pricing:</h1>
+
+    <p>At Pet 2 Vet we want to provide the best transport solutions we can for our clients and their loved ones.  We offer Emergency and Non-Emergency Transportation services in the Volusia County and surrounding areas.  Please see our pricing model as follows:</p>
+
+    <div class="pricing_list">
+        <ul>
+            <li>Emergency Transport: $150.00 (covers up to 20 miles)</li>
+            <li>Non-Emergency Transport: $100.00 (covers up to 20 miles)</li>
+            <li>Oxygen Therapy: $30.00</li>
+            <li>Additional 10 miles: $25.00 Flat Rate</li>
+        </ul>
+    </div>
+
+    <div class="form-container">
+        <h1 class="transport-form">Non-Emergency Transport Request</h1>
+        <form id="transport-form" action="/send_email" method="POST">
+            <label for="recipient_email">Recipient Email:</label>
+            <input type="email" id="recipient_email" name="recipient_email" required><br>
+            <label for="pet_name">Pet Name:</label><br>
+            <input type="text" id="pet_name" name="pet_name" required><br>
+            <label for="transport_date">Date of Transport:</label><br>
+            <input type="text" id="transport_date" name="transport_date" required><br><br>
+            <label for="up_location">Pick Up Address:</label><br>
+            <input type="text" id="up_location" name="up_location" required><br><br>
+            <label for="off_location">Drop Off Address:</label><br>
+            <input type="text" id="off_location" name="off_location" required><br><br>
+            <input type="submit" value="Submit Form">
+        </form>
+    </div><br><br>
+
+    <h3>*Tax rate: 6.5%</h3>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_payment.css') }}">
+    <title>View Payment Information</title>
+</head>
+
+<body>
+    <h1>Payment Details</h1>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            <li><a href="/dashboard">Dashboard</a></li> |
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            <li><a href="/registration">Register</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/pets">Add Pet</a></li> |
+            <li><a href="/payments">Add Payment Method</a></li> |
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Payment Name</th>
+                <th>Card Number</th>
+                <th>Month</th>
+                <th>Year</th>
+                <th>CVV</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payments in payment %}
+            <tr>
+                <td>{{ payments.payment_name }}</td>
+                <td>{{ payments.card_number }}</td>
+                <td>{{ payments.month }}</td>
+                <td>{{ payments.year }}</td>
+                <td>{{ payments.cvv }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

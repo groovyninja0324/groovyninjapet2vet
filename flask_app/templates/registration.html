@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='registration_style.css') }}">
+    <title>Register</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            <li><a href="/user_login">Login</a></li>
+        </ul>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p style="color: red;">{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="form-container">
+        <h1 class="user_registration">User Registrtaion</h1><br>
+        <form id="register-form" action="/register" method="POST">
+            <label for="first_name">First Name (Min of 3 characters, letters only):</label><br>
+            <input type="text" id="first_name" name="first_name" required><br>
+            <label for="last_name">Last Name (Min of 3 characters, letters only):</label><br>
+            <input type="text" id="last_name" name="last_name" required><br>
+            <label for="email">Email (example@example.com):</label><br>
+            <input type="text" id="email" name="email" required><br>
+            <label for="address">Address (numerics and street only):</label><br>
+            <input type="text" id="address" name="address" required><br>
+            <label for="city">City:</label><br>
+            <input type="text" id="city" name="city" required><br>
+            <label for="state">State:</label><br>
+            <select id="state" name="state" required> <br>
+                <option value="al">AL</option>
+                <option value="ak">AK</option>
+                <option value="az">AZ</option>
+                <option value="ar">AR</option>
+                <option value="ca">CA</option>
+                <option value="co">CO</option>
+                <option value="ct">CT</option>
+                <option value="de">DE</option>
+                <option value="fl">FL</option>
+                <option value="ga">GA</option>
+                <option value="hi">HI</option>
+                <option value="id">ID</option>
+                <option value="il">IL</option>
+                <option value="in">IN</option>
+                <option value="ia">IA</option>
+                <option value="ks">KS</option>
+                <option value="ky">KY</option>
+                <option value="la">LA</option>
+                <option value="me">ME</option>
+                <option value="md">MD</option>
+                <option value="ma">MA</option>
+                <option value="mi">MI</option>
+                <option value="MN">MN</option>
+                <option value="ms">MS</option>
+                <option value="mo">MO</option>
+                <option value="mt">MT</option>
+                <option value="ne">NE</option>
+                <option value="nv">NV</option>
+                <option value="nh">NH</option>
+                <option value="nj">NJ</option>
+                <option value="nm">NM</option>
+                <option value="ny">NY</option>
+                <option value="nc">NC</option>
+                <option value="nd">ND</option>
+                <option value="oh">OH</option>
+                <option value="ok">OK</option>
+                <option value="or">OR</option>
+                <option value="pa">PA</option>
+                <option value="ri">RI</option>
+                <option value="sc">SC</option>
+                <option value="sd">SD</option>
+                <option value="tn">TN</option>
+                <option value="tx">TX</option>
+                <option value="ut">UT</option>
+                <option value="vt">VT</option>
+                <option value="va">VA</option>
+                <option value="wa">WA</option>
+                <option value="wv">WV</option>
+                <option value="wi">WI</option>
+                <option value="wy">WY</option>
+            </select><br>
+            <label for="zipcode">Zipcode:</label><br>
+            <input type="text" id="zipcode" name="zipcode" required><br>
+            <label for="password">Password (Min 8 characters):</label><br>
+            <input type="text" id="password" name="password" required><br>
+            <label for="confirm_password">Confirm Password:</label><br>
+            <input type="text" id="confirm_password" name="confirm_password" required><br><br>
+            <input type="submit" value="Register"><br><br>
+        </form>
+</body>
+</html>

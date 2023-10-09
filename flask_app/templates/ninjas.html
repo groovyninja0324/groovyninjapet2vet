@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ninjas.css') }}">
+    <title>Meet the Ninjas</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/dashboard">Dashboard</a></li> |
+            {% endif %}
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            <li><a href="/registration">Register</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <div class="meet-ninjas">
+        <h1>Meet the Ninjas!</h1>
+    </div>
+    <div class="image">
+        <img src="{{ url_for('static', filename='pictures/turtle.png') }}" alt="married">
+    </div>
+    <p>My name is Danielle and I'm an exotic animal vet
+        tech in Florida. With the love and support of my husband Austin; we created Groovy Ninja LLC to help solve a
+        problem.
+    </p>
+
+    <p>&nbsp;</p>
+    <div class="image">
+        <img src="{{ url_for('static', filename='pictures/together.png') }}"alt="together">
+    </div>
+
+    <p>&nbsp;</p>
+    
+    <p>We started this business to bring awareness to the
+        major issues that the veterinary community deals with on a daily basis. Being in the vetmed field for 10 years,
+        I have felt the pain that all veterinary professionals deal with:
+    </p>
+
+    <p>&nbsp;</p>
+    
+    <div class="image">
+        <img src="{{ url_for('static', filename='pictures/burnout.png') }}" alt="burnout">
+    </div>
+
+    <p>&nbsp;</p>
+
+    <p>~The clients yelling at us and blaming us for the high prices of     veterinary care.</p>
+    <p>~The lack of techs and assistants to cover the workload.</p>
+    <p>~Emergency hospitals needing to stop taking in cases because the hospital is overpacked and understaffed.</p>
+    <p>~Our precious coworkers being overworked and holding all the responsibilities of the world on their shoulders while letting guilt eat them away to the point where they take their own lives instead of seeking help.</p>
+    <p>~Feeling like nothing we do is ever good enough for the clients whose animals we are desperately trying to save.</p>
+    <p>~The lack of available funds for the medical bills.</p>
+
+    <h2>What people <strong>don't</strong> know:</h2>
+        
+    <p>There are actually many resources for assistance with veterinary bills. Some range per state or per breed-specific issues, others are national funds/grants for certain ailments that animals are dealing with (Emergency Care, Cancer, Diabetes, Homelessness, etc). That's why we created Groovy Ninja LLC and the phrase that we are selling on our merchandise- hoping to bring people here to find out <strong>how</strong>they can afford the vet.
+    </p>
+
+    <p>&nbsp;</p>
+    
+    <p>Visit<a href="/vet_resources">I CAN AFFORD THE VET</a> to see how.</p>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contactstyle.css') }}">
+    <title>Contact Us</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/dashboard">Dashboard</a></li> |
+            {% endif %}
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            <li><a href="/registration">Register</a></li> |
+            <li><a href="/user_login">Login</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="form-container">
+        <h1 class="contact_us">Contact Us</h1><br>
+        <form id="contact-us" action="/contact" method="POST">
+            <label for="first_name">First Name:</label><br>
+            <input type="text" id="first_name" name="first_name"><br>
+            <label for="last_name">Last Name:</label><br>
+            <input type="text" id="last_name" name="last_name"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+            <label for="question">Questions:</label><br>
+            <textarea id="question" name="question" rows="4" cols="20" placeholder="Enter your questions here"></textarea><br>
+            <input type="submit" value="Submit"><br><br>
+        </form>
+    </div>
+</body>
+</html>

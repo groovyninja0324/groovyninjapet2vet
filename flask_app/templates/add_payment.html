@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_pet.css') }}">
+    <title>Add Pet</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="/">Home</a></li> |
+            <li><a href="/transport">Transportation Service</a></li> |
+            <li><a href="/meet_ninjas">The Ninjas</a></li> |
+            <li><a href="/vet_resources">I Can Afford The Vet</a></li> |
+            <li><a href="/registration">Register</a></li> |
+            {% if 'user_id' in session %}
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <div class="form-container">
+        <h1 class="payment-form">Add Payment:</h1>
+        <form id="payment-form" action="/payments/add" method="POST">
+            <input type="hidden" name="user_id" value="{{session['user_id']}}">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required><br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required><br>
+            <label for="card_number">Card Number:</label>
+            <input type="text" id="card_number" name="card_number" required><br>
+            <label for="month">Month (Format: XX):</label>
+            <input type="text" id="month" name="month" required><br>
+            <label for="year">Year (Format: XXXX):</label><br>
+            <input type="text" id="year" name="year" required><br><br>
+            <label for="cvv">CVV:</label><br>
+            <input type="text" id="cvv" name="cvv" required><br><br>
+            <label for="payment_name">Payment Name (Visa, Mastercard, American Express):</label><br>
+            <input type="text" id="payment_name" name="payment_name" required><br><br>
+            <input type="submit" value="Add">
+        </form>
+    </div><br><br>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+body{
+    background-color: #009798;
+    margin: auto;
+    margin-top: 100px;
+    padding: 0;
+}
+
+.nav-bar {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style the list items (menu items) */
+.nav-bar li {
+    display: inline; /* Display list items horizontally */
+    margin-right: 10px; /* Add some space between items */
+}
+
+/* Position the navigation bar at the top right corner */
+.nav-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px; /* Add padding for spacing */
+    background-color: #009798; /* Background color for the navigation bar */
+}
+
+/* Style the links (menu items) */
+.nav-bar li a {
+    text-decoration: none;
+    color: #fff; /* Text color for menu items */
+}
+
+/* Style the links on hover (optional) */
+.nav-bar li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
